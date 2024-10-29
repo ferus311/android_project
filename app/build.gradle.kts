@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ferus.birthday"
+    namespace = "com.ferus.mobile_assignment"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ferus.birthday"
+        applicationId = "com.ferus.mobile_assignment"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

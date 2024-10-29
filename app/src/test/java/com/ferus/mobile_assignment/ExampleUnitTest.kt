@@ -1,4 +1,4 @@
-package com.ferus.birthday
+package com.ferus.mobile_assignment
 
 import org.junit.Test
 

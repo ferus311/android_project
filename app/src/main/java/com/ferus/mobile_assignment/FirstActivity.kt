@@ -1,4 +1,4 @@
-package com.ferus.birthday
+package com.ferus.mobile_assignment
 
 import android.os.Bundle
 import android.view.View
@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.math.BigDecimal
 import java.math.RoundingMode
+import android.view.MenuItem
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class FirstActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var textResult: TextView
     lateinit var subText: TextView
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_calc)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         textResult = findViewById(R.id.text_result)
         subText = findViewById(R.id.sub_text)
@@ -63,7 +65,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_clear_entry -> clearEntry()
         }
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> { // Khi nhấn vào nút "Back" trên ActionBar
+                finish() // Đóng Activity này và quay về Activity trước đó
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
     private fun addDigit(digit: String) {
         if (state == 1) {
             op1 += digit

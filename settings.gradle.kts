@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "birthday"
+rootProject.name = "mobile_assignment"
 include(":app")
- 
